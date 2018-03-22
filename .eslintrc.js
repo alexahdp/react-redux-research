@@ -7,5 +7,8 @@ module.exports = {
   globals: {
     "it": true,
     "describe": true
+  },
+  rules: {
+    'react/jsx-filename-extension': "off"
   }
 };
