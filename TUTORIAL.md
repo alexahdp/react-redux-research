@@ -15,3 +15,5 @@ node_modules/.bin/eslint src --fix
 
 # create .editorconfig file
 # create .eslintignore
+
+npm install husky@next --save-dev
