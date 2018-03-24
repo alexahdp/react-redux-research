@@ -19,6 +19,18 @@ node_modules/.bin/eslint src --fix
 npm install husky@next --save-dev
 
 
+npm install --save-dev eslint babel-eslint eslint-plugin-flowtype
+# edit .babelrc, .eslintrc.js
+
+npm install --save-dev jest
+
+npm i --save-dev babel-jest babel-core regenerator-runtime
+
+# add to /etc/sysctl.conf for jest watch
+fs.inotify.max_user_watches=524288
+
+npm install jest-cli
+
 # TODO
 postcss
 flow

@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "node_modules/.bin/eslint src",
     "flow": "flow check src"
@@ -18,17 +18,16 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run flow"
+      "pre-commit": "npm run lint && npm run flow && npm run test"
     }
   },
   "dependencies": {
     "immutable": "^3.8.2",
+    "jest-cli": "^22.4.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
-    "react-scripts": "1.1.1",
-    "redux": "^3.7.2",
-    "remote-redux-devtools": "^0.5.12"
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
@@ -40,6 +39,9 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "flow-bin": "^0.68.0",
-    "husky": "^0.15.0-rc.13"
+    "husky": "^0.15.0-rc.13",
+    "jest": "^22.4.3",
+    "react-scripts": "1.1.1",
+    "remote-redux-devtools": "^0.5.12"
   }
 }
