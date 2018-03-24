@@ -17,3 +17,20 @@ node_modules/.bin/eslint src --fix
 # create .eslintignore
 
 npm install husky@next --save-dev
+
+
+# TODO
+postcss
+flow
+compose
+recompose
+saga
+sublime-сниппеты
+bash-сниппеты
+ci
+react-glsl
+
+# Цель: новый конструктор сайтов!
+- Панель виджетов
+- холст
+

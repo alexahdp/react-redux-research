@@ -6,7 +6,10 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 const reducer = state => state;
-const initialState = {};
+const initialState = {
+  name: 'Alex',
+};
+
 const store = createStore(reducer, initialState);
 
 ReactDOM.render(
