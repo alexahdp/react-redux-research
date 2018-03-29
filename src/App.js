@@ -2,13 +2,14 @@
 
 import * as React from 'react';
 import { connect } from 'react-redux';
+import styles from './assets/styles.css';
 
 type Props = {
   name: number
 };
 
 const app = (props: Props): (React.Node) => (
-  <div className="app">
+  <div className={styles.app}>
     <h1>Hello, {props.name}</h1>
   </div>
 );

@@ -31,9 +31,8 @@ fs.inotify.max_user_watches=524288
 
 npm install jest-cli
 
-# scss
-npm install --save node-sass-chokidar
-npm install --save npm-run-all
+# css-modules
+https://medium.com/nulogy/how-to-use-css-modules-with-create-react-app-9e44bec2b5c2
 
 
 # TODO
