@@ -8,7 +8,7 @@ type Props = {
 };
 
 const app = (props: Props): (React.Node) => (
-  <div className="App">
+  <div className="app">
     <h1>Hello, {props.name}</h1>
   </div>
 );

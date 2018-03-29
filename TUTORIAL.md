@@ -31,6 +31,11 @@ fs.inotify.max_user_watches=524288
 
 npm install jest-cli
 
+# scss
+npm install --save node-sass-chokidar
+npm install --save npm-run-all
+
+
 # TODO
 postcss
 flow
@@ -41,6 +46,9 @@ sublime-сниппеты
 bash-сниппеты
 ci
 react-glsl
+
+LOOK
+  https://github.com/zeit/next.js/
 
 # Цель: новый конструктор сайтов!
 - Панель виджетов
