@@ -1,20 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+
+import createHistory from 'history/createBrowserHistory';
+import { Route } from 'react-router';
+import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
+
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-const reducer = state => state;
+const history = createHistory();
+const middleware = applyMiddleware(routerMiddleware(history));
+
 const initialState = {
-  name: 'Alex',
+  app: {
+    name: 'Alex',
+  },
 };
 
-const store = createStore(reducer, initialState);
+const reducer = state => state || initialState;
+const store = middleware(createStore)(
+  combineReducers({ app: reducer }, { router: routerReducer }),
+  initialState,
+);
+
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ConnectedRouter history={history}>
+      <div>
+        <Route path="/" component={App} />
+      </div>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('root'),
 );

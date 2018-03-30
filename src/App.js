@@ -15,7 +15,7 @@ const app = (props: Props): (React.Node) => (
 );
 
 const mapStateToProps = state => ({
-  name: state.name,
+  name: state.app.name,
 });
 
 const mapDispatchToProps = dispatch => ({}) // eslint-disable-line
