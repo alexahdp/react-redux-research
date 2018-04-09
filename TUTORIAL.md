@@ -37,19 +37,17 @@ https://medium.com/nulogy/how-to-use-css-modules-with-create-react-app-9e44bec2b
 
 # TODO
 postcss
-flow
-compose
-recompose
+flow || tcomb
 saga
 sublime-сниппеты
 bash-сниппеты
 ci
-react-glsl
+sublime-eslint
 
 LOOK
   https://github.com/zeit/next.js/
 
+
 # Цель: новый конструктор сайтов!
 - Панель виджетов
 - холст
-
