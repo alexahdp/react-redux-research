@@ -1,36 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-
 import createHistory from 'history/createBrowserHistory';
 import { Route } from 'react-router';
-import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
+import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
+import { createLogger } from 'redux-logger';
+import Immutable from 'immutable';
 
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import App from './App';
+import Menu from './menu';
+import Library from './library';
+import reducer from './reducers';
+
+const logger = createLogger({
+  stateTransformer: state => (Immutable.Iterable.isIterable(state) ? state.toJS() : state),
+});
 
 const history = createHistory();
-const middleware = applyMiddleware(routerMiddleware(history));
+const middleware = applyMiddleware(logger, routerMiddleware(history));
 
-const initialState = {
-  app: {
-    name: 'Alex',
-  },
-};
 
-const reducer = state => state || initialState;
-const store = middleware(createStore)(
-  combineReducers({ app: reducer }, { router: routerReducer }),
-  initialState,
-);
-
+const store = middleware(createStore)(reducer);
 
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div>
-        <Route path="/" component={App} />
+        <Menu />
+        <div className="container">
+          <Route exact path="/" component={App} />
+          <Route path="/library" component={Library} />
+        </div>
       </div>
     </ConnectedRouter>
   </Provider>,

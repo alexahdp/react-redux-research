@@ -10,12 +10,14 @@ type Props = {
 
 const app = (props: Props): (React.Node) => (
   <div className={styles.app}>
-    <h1>Hello, {props.name}</h1>
+    <div className="container">
+      <h1>Hello, {props.name}</h1>
+    </div>
   </div>
 );
 
 const mapStateToProps = state => ({
-  name: state.app.name,
+  name: state.getIn(['app', 'name']),
 });
 
 const mapDispatchToProps = dispatch => ({}) // eslint-disable-line
