@@ -7,22 +7,26 @@ import { Route } from 'react-router';
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import Immutable from 'immutable';
+import createSagaMiddleware from 'redux-saga';
 
 import registerServiceWorker from './registerServiceWorker';
 import App from './App';
 import Menu from './menu';
 import Library from './library';
 import reducer from './reducers';
+import sagas from './sagas';
 
 const logger = createLogger({
   stateTransformer: state => (Immutable.Iterable.isIterable(state) ? state.toJS() : state),
 });
 
 const history = createHistory();
-const middleware = applyMiddleware(logger, routerMiddleware(history));
-
+const sagaMiddleware = createSagaMiddleware();
+const middleware = applyMiddleware(sagaMiddleware, logger, routerMiddleware(history));
 
 const store = middleware(createStore)(reducer);
+
+sagaMiddleware.run(sagas);
 
 ReactDOM.render(
   <Provider store={store}>

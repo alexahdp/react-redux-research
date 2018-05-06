@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-import actions from '../booklist/actions';
+import actions from '../actions';
 
 const app = ({books, removeBook, setEeditBook}) => ( // eslint-disable-line
   <ul className="list-group">

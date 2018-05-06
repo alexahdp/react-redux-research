@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { mapProps, compose, withHandlers } from 'recompose';
 import { reduxForm, Field, reset as resetForm } from 'redux-form/immutable';
 import Immutable from 'immutable';
-import actions from '../booklist/actions';
+import actions from '../actions';
 
 const app = ({ handleSubmit, reset, mode }) => ( // eslint-disable-line
   <form onSubmit={handleSubmit}>

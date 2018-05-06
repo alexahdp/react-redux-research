@@ -1,9 +1,8 @@
 import Immutable from 'immutable';
 
 export default function (state, action) {
-  if (action.type === 'ADD_BOOK') {
-    const id = `${Date.now()}${Math.round(Math.random() * 10000)}`;
-    return state.update('books', books => books.push(Immutable.fromJS(Object.assign({}, action.payload, { _id: id }))));
+  if (action.type === 'ADD_BOOK_TO_LIST') {
+    return state.update('books', books => books.push(Immutable.fromJS(action.payload)));
   } else if (action.type === 'REMOVE_BOOK') {
     return state.update('books', books => books.filter(book => book.get('_id') !== action.payload.bookId));
   } else if (action.type === 'SET_EDIT_BOOK') {
