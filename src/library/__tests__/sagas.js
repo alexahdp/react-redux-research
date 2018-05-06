@@ -14,5 +14,9 @@ describe('test saga', () => {
     expect(newBook).toBeDefined();
     expect(_.omit(newBook, ['_id'])).toEqual(book);
     expect(newBook._id).toBeDefined();
+    const jsonLibrary = window.localStorage.getItem('library');
+    const library = JSON.parse(jsonLibrary);
+    expect(Array.isArray(library)).toBe(true);
+    expect(library.length).toEqual(1);
   });
 });

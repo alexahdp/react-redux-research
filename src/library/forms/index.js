@@ -67,6 +67,7 @@ export default (compose(
     // for reduxForm
     initialValues: props.editBook || Immutable.fromJS({ author: '', title: '', pages: '' }),
     mode: props.editBook ? 'edit' : 'add',
+    editBook: props.editBook,
   })),
 
   reduxForm({
@@ -104,7 +105,8 @@ export default (compose(
       if (props.editBook) {
         book._id = props.editBook.get('_id');
         props.updateBook(book);
-      } else {
+      }
+      else {
         props.addBook(book);
       }
       props.resetFormFields();

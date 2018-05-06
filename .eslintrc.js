@@ -18,6 +18,7 @@ module.exports = {
   ],
   rules: {
     'react/jsx-filename-extension': "off",
-    'no-underscore-dangle': "off"
+    'no-underscore-dangle': "off",
+    'brace-style': ['error', 'stroustrup']
   }
 };
