@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { mapProps, compose, withHandlers } from 'recompose';
 import { reduxForm, Field, reset as resetForm } from 'redux-form/immutable';
 import Immutable from 'immutable';
-import actions from '../actions';
+import actionCreators from '../actions';
 
 const app = ({ handleSubmit, reset, mode }) => ( // eslint-disable-line
   <form onSubmit={handleSubmit}>
@@ -82,9 +82,9 @@ export default (compose(
       form: state.getIn(['form', formName, 'values']),
     }),
     {
-      addBook: actions.addBook,
-      updateBook: actions.updateBook,
-      unsetEeditBook: actions.unsetEeditBook,
+      addBook: actionCreators.addBook,
+      updateBook: actionCreators.updateBook,
+      unsetEeditBook: actionCreators.unsetEeditBook,
       resetFormFields: () => resetForm(formName),
     },
   ),

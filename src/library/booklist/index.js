@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-import actions from '../actions';
+import actionCreators from '../actions';
 
 const app = ({books, removeBook, setEeditBook}) => ( // eslint-disable-line
   <ul className="list-group">
@@ -40,7 +40,7 @@ export default (compose(connect(
     books: state.getIn(['library', 'books']),
   }),
   {
-    removeBook: actions.removeBook,
-    setEeditBook: actions.setEeditBook,
+    removeBook: actionCreators.removeBook,
+    setEeditBook: actionCreators.setEeditBook,
   },
 ))(app));
