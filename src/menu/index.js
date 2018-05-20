@@ -11,7 +11,7 @@ export default () => (
         <Link to="/library" className="nav-link" href="#library">Library</Link>
       </li>
       <li className="nav-item">
-        <Link to="/drag" className="nav-link" href="#drag">Drag</Link>
+        <Link to="/dragndrop" className="nav-link" href="#drag">Drag</Link>
       </li>
     </ul>
   </nav>

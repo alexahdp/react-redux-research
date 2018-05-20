@@ -1,7 +1,5 @@
 import { createAction } from 'redux-actions';
-
-// generate action
-const ga = name => Symbol(name);
+import ga from '../helpers/ga';
 
 export const actions = {
   ADD_BOOK: ga(),

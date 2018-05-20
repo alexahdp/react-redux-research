@@ -9,10 +9,12 @@ import { createLogger } from 'redux-logger';
 import Immutable from 'immutable';
 import createSagaMiddleware from 'redux-saga';
 
+
 import registerServiceWorker from './registerServiceWorker';
 import App from './App';
 import Menu from './menu';
 import Library from './library';
+import Dragndrop from './dragndrop';
 import reducer from './reducers';
 import sagas from './sagas';
 
@@ -36,6 +38,7 @@ ReactDOM.render(
         <div className="container">
           <Route exact path="/" component={App} />
           <Route path="/library" component={Library} />
+          <Route path="/dragndrop" component={Dragndrop} />
         </div>
       </div>
     </ConnectedRouter>
