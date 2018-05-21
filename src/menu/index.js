@@ -13,6 +13,9 @@ export default () => (
       <li className="nav-item">
         <Link to="/dragndrop" className="nav-link" href="#drag">Drag</Link>
       </li>
+      <li className="nav-item">
+        <Link to="/mydragndrop" className="nav-link" href="#drag">myDrag</Link>
+      </li>
     </ul>
   </nav>
 );

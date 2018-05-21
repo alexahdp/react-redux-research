@@ -1,0 +1,16 @@
+.panel {
+  background-color: #eee;
+}
+
+.card {
+  position: absolute;
+  background-color: blue;
+  width: 200px;
+  height: 200px;
+}
+
+.drop-area {
+  background-color: green;
+  width: 250px;
+  height: 250px;
+}

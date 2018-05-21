@@ -15,6 +15,8 @@ import App from './App';
 import Menu from './menu';
 import Library from './library';
 import Dragndrop from './dragndrop';
+import myDragndrop from './mydragndrop';
+
 import reducer from './reducers';
 import sagas from './sagas';
 
@@ -39,6 +41,7 @@ ReactDOM.render(
           <Route exact path="/" component={App} />
           <Route path="/library" component={Library} />
           <Route path="/dragndrop" component={Dragndrop} />
+          <Route path="/mydragndrop" component={myDragndrop} />
         </div>
       </div>
     </ConnectedRouter>

@@ -17,8 +17,10 @@ module.exports = {
     "flowtype"
   ],
   rules: {
-    'react/jsx-filename-extension': "off",
-    'no-underscore-dangle': "off",
-    'brace-style': ['error', 'stroustrup']
+    'react/jsx-filename-extension': 'off',
+    'jsx-a11y/aria-role': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'no-underscore-dangle': 'off',
+    'brace-style': ['error', 'stroustrup'],
   }
 };
